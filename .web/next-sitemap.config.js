@@ -1,0 +1,1 @@
+module.exports = {"siteUrl": "https://calculadoraglosa10.reflex.run", "generateRobotsTxt": true, "outDir": "_static"}

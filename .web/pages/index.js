@@ -38,15 +38,16 @@ export default function Component() {
     }
   }, [router])
 
-  const ref_nombre_ep = useRef(null); refs['ref_nombre_ep'] = ref_nombre_ep;
+  const ref_num_familias = useRef(null); refs['ref_num_familias'] = ref_num_familias;
+  const ref_nombre_proyecto = useRef(null); refs['ref_nombre_proyecto'] = ref_nombre_proyecto;
   const ref_valor_terreno = useRef(null); refs['ref_valor_terreno'] = ref_valor_terreno;
   const ref_area_terreno = useRef(null); refs['ref_area_terreno'] = ref_area_terreno;
-  const ref_nombre_proyecto = useRef(null); refs['ref_nombre_proyecto'] = ref_nombre_proyecto;
+  const ref_nombre_ep = useRef(null); refs['ref_nombre_ep'] = ref_nombre_ep;
   
-    const handleSubmityyenoqln = useCallback((ev) => {
+    const handleSubmitfnybtxry = useCallback((ev) => {
         const $form = ev.target
         ev.preventDefault()
-        const form_data = {...Object.fromEntries(new FormData($form).entries()), ...{"num_familias": getRefValue(ref_num_familias), "nombre_proyecto": getRefValue(ref_nombre_proyecto), "nombre_ep": getRefValue(ref_nombre_ep), "valor_terreno": getRefValue(ref_valor_terreno), "codigo_proyecto": getRefValue(ref_codigo_proyecto), "area_terreno": getRefValue(ref_area_terreno)}}
+        const form_data = {...Object.fromEntries(new FormData($form).entries()), ...{"num_familias": getRefValue(ref_num_familias), "nombre_ep": getRefValue(ref_nombre_ep), "valor_terreno": getRefValue(ref_valor_terreno), "nombre_proyecto": getRefValue(ref_nombre_proyecto), "codigo_proyecto": getRefValue(ref_codigo_proyecto), "area_terreno": getRefValue(ref_area_terreno)}}
 
         addEvents([Event("form_state.handle_submit", {form_data:form_data})])
 
@@ -56,7 +57,6 @@ export default function Component() {
     })
     
   const ref_codigo_proyecto = useRef(null); refs['ref_codigo_proyecto'] = ref_codigo_proyecto;
-  const ref_num_familias = useRef(null); refs['ref_num_familias'] = ref_num_familias;
 
   return (
     <Fragment>
@@ -119,7 +119,7 @@ export default function Component() {
   <Text sx={{"fontSize": "2em"}}>
   {`Ingrese los datos del proyecto.`}
 </Text>
-  <Box as={`form`} onSubmit={handleSubmityyenoqln}>
+  <Box as={`form`} onSubmit={handleSubmitfnybtxry}>
   <HStack spacing={`2em`}>
   <VStack>
   <Input id={`nombre_ep`} placeholder={`Entidad Solicitante`} ref={ref_nombre_ep} type={`text`}/>
